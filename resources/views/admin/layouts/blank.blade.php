@@ -52,14 +52,16 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#birthday').datepicker({
+                  format: 'yyyy/mm/dd',
                   autoclose: true,
-                  minDate: new Date(1930, 1 - 1, 1),
-                  maxDate: '0'
+                  startDate: new Date(1930,1-1,1),
+                  endDate: new Date()
                 });
 
                 $('#date-established').datepicker({
+                  format: 'yyyy/mm/dd',
                   autoclose: true,
-                  maxDate: '0'
+                  endDate: new Date()
                 });
 
                 $('.select2').select2();
