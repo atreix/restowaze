@@ -52,19 +52,33 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#birthday').datepicker({
-                  format: 'yyyy/mm/dd',
-                  autoclose: true,
-                  startDate: new Date(1930,1-1,1),
-                  endDate: new Date()
+                    autoclose: true,
+                    startDate: '-100y',
+                    endDate: 'today',
+                    todayHighlight: true
                 });
 
                 $('#date-established').datepicker({
-                  format: 'yyyy/mm/dd',
-                  autoclose: true,
-                  endDate: new Date()
+                    autoclose: true,
+                    startDate: '-200y',
+                    endDate: 'today',
+                    todayHighlight: true
                 });
 
                 $('.select2').select2();
+
+                $(".duplicate").live("click", function(e){
+                    e.preventDefault();
+                    var duplicateElement = $(this).attr("href");
+                    var parentElement = $(duplicateElement)[0].parentElement;
+                    $(parentElement).append( $(duplicateElement)[0].outerHTML );
+                });
+
+                if( $("input[type=file].with-preview").length ){
+                    $("input.file-upload-input").MultiFile({
+                        list: ".file-upload-previews"
+                    });
+                }
             });
         </script>
 

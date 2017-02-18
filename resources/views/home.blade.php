@@ -108,7 +108,7 @@
                     @foreach ($details as $detail)
                     <div class="col-md-3 col-sm-3">
                         <div class="item" data-id="{{ $detail['id'] }}">
-                            <a href="">
+                            <a href="{{ url('/detail', $detail['id']) }}">
                                 <div class="description">
                                     <!--<figure>Average Price: $8 - $30</figure>-->
                                     <div class="label label-default">{{ $detail['type'] }}</div>
@@ -142,9 +142,9 @@
                     @endforeach
                 </div>
                 <!--end row-->
-                <div class="center">
+                <!--<div class="center">
                     <a href="listing.html" class="btn btn-primary btn-light-frame btn-rounded btn-framed arrow">View all listings</a>
-                </div>
+                </div>-->
             <!--end center-->
             </div>
             <!--end container-->
